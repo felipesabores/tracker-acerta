@@ -71,7 +71,7 @@ export const DevicesPage: React.FC = () => {
                         <input
                             type="search"
                             placeholder="Buscar por nome ou IMEI..."
-                            className="bg-background pl-9 h-10 w-full sm:w-64"
+                            className="bg-background pl-10 h-10 w-full sm:w-64 rounded-md border border-input focus:outline-none focus:ring-2 focus:ring-ring"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
@@ -115,7 +115,7 @@ const DeviceCard = ({ device, position }: { device: Device, position?: Position 
     return (
         <div className="card group hover:shadow-md transition-all duration-300 hover:border-primary/50 overflow-hidden">
             <div className="p-4 border-b border-border bg-muted/30 flex justify-between items-start">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-5">
                     <div className="p-2.5 bg-background rounded-full border border-border shadow-sm">
                         <Icon className="text-primary" size={20} />
                     </div>

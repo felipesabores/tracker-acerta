@@ -994,6 +994,23 @@ input:focus {
   max-width: 330px;
 }
 
-.w-login-logo {
-  width: 180px;
+/* --- More Utilities --- */
+.pl-10 {
+  padding-left: 2.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-64 {
+  width: 16rem;
 }
