@@ -995,16 +995,20 @@ input:focus {
 }
 
 /* --- More Utilities --- */
-.pl-10 {
-  padding-left: 2.5rem;
+.pl-10,
+.search-input-padding {
+  padding-left: 2.75rem !important;
+  /* Forces enough space for the icon */
 }
 
 .gap-4 {
   gap: 1rem;
 }
 
-.gap-5 {
-  gap: 1.25rem;
+.gap-5,
+.device-card-gap {
+  gap: 1.5rem !important;
+  /* Increased to 24px and forced */
 }
 
 .w-full {
@@ -1013,4 +1017,18 @@ input:focus {
 
 .w-64 {
   width: 16rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.icon-padding {
+  padding: 0.625rem !important;
+  /* Replaces p-2.5 (10px) */
+}
+
+.bg-muted-light {
+  background-color: hsl(var(--muted) / 0.3);
+  /* Replaces bg-muted/30 */
 }
