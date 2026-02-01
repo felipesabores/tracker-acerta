@@ -37,8 +37,8 @@
   --ring: 240 5% 64.9%;
   /* Zinc-400 */
 
-  /* Radius - Increased for Modern/Friendly Look */
-  --radius: 1.5rem;
+  /* Radius - Standard Modern Look */
+  --radius: 0.5rem;
 }
 
 .dark {
@@ -875,16 +875,16 @@ input:focus {
   overflow: hidden;
 }
 
-/* Switch Component (Shadcn-like) */
+/* Switch Component (Premium) */
 .switch {
   all: unset;
-  width: 2.6rem;
+  width: 2.75rem;
   height: 1.5rem;
   background-color: hsl(var(--input));
   border-radius: 9999px;
   position: relative;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   border: 1px solid transparent;
 }
 
@@ -895,24 +895,105 @@ input:focus {
 
 .switch[data-state="checked"] {
   background-color: hsl(var(--primary));
+  box-shadow: 0 0 0 1px hsl(var(--background)), 0 0 0 3px hsl(var(--primary) / 0.2);
 }
 
 .switch[data-state="unchecked"] {
   background-color: hsl(var(--input));
+  /* Zinc-200/300 */
+}
+
+/* Dark mode adjustment for unchecked state to be visible */
+.dark .switch[data-state="unchecked"] {
+  background-color: hsl(var(--secondary));
+}
+
+.switch:hover {
+  opacity: 0.9;
 }
 
 .switch-thumb {
   display: block;
-  width: 1.1rem;
-  height: 1.1rem;
-  background-color: hsl(var(--background));
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: white;
   border-radius: 9999px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 0.1);
-  transition: transform 0.2s;
-  transform: translateX(0.15rem);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.15), 0 1px 2px rgb(0 0 0 / 0.06);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: translateX(0.125rem);
   will-change: transform;
 }
 
 .switch[data-state="checked"] .switch-thumb {
-  transform: translateX(1.35rem);
+  transform: translateX(1.375rem);
+  background-color: white;
+}
+
+/* --- Added Utilities --- */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.max-w-sm {
+  max-width: 24rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.peer-disabled\:cursor-not-allowed:disabled {
+  cursor: not-allowed;
+}
+
+.peer-disabled\:opacity-70:disabled {
+  opacity: 0.7;
+}
+
+/* --- Specific Login Utilities --- */
+.w-login-card {
+  max-width: 330px;
+}
+
+.w-login-logo {
+  width: 180px;
 }

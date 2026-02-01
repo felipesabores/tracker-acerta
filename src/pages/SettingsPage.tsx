@@ -1,6 +1,5 @@
 import React from 'react';
 import { User, Bell, Palette, Moon, LogOut, Shield } from 'lucide-react';
-import clsx from 'clsx';
 
 export const SettingsPage: React.FC = () => {
     const [theme, setTheme] = React.useState<'light' | 'dark'>(() => {
@@ -127,15 +126,10 @@ export const SettingsPage: React.FC = () => {
                                 role="switch"
                                 aria-checked={theme === 'dark'}
                                 onClick={toggleTheme}
-                                className={clsx(
-                                    "relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
-                                    theme === 'dark' ? "bg-primary" : "bg-input"
-                                )}
+                                data-state={theme === 'dark' ? 'checked' : 'unchecked'}
+                                className="switch"
                             >
-                                <span className={clsx(
-                                    "pointer-events-none block h-5 w-5 transform rounded-full bg-background shadow-lg ring-0 transition duration-200 ease-in-out",
-                                    theme === 'dark' ? "translate-x-5" : "translate-x-0"
-                                )} />
+                                <span className="switch-thumb" />
                             </button>
                         </div>
                         <div className="flex items-center justify-between">
@@ -150,15 +144,10 @@ export const SettingsPage: React.FC = () => {
                                 role="switch"
                                 aria-checked={soundEnabled}
                                 onClick={toggleSound}
-                                className={clsx(
-                                    "relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
-                                    soundEnabled ? "bg-primary" : "bg-input"
-                                )}
+                                data-state={soundEnabled ? 'checked' : 'unchecked'}
+                                className="switch"
                             >
-                                <span className={clsx(
-                                    "pointer-events-none block h-5 w-5 transform rounded-full bg-background shadow-lg ring-0 transition duration-200 ease-in-out",
-                                    soundEnabled ? "translate-x-5" : "translate-x-0"
-                                )} />
+                                <span className="switch-thumb" />
                             </button>
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import { LayoutDashboard, Map, Settings, LogOut, Truck, Wrench, Shield } from 'lucide-react';
+import logo from '../assets/logo.png';
 import clsx from 'clsx';
 import styles from './MainLayout.module.css';
 
@@ -13,8 +14,7 @@ export const MainLayout: React.FC = () => {
             <aside className={styles.sidebar}>
                 <div className={styles.logoContainer}>
                     <div className={styles.logo}>
-                        <Truck className="h-6 w-6" />
-                        <span>Acerta Express</span>
+                        <img src={logo} alt="Acerta Express" className="h-full w-auto max-w-[200px] object-contain py-2" />
                     </div>
                 </div>
 
